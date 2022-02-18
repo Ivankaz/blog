@@ -20,3 +20,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group([
+  'prefix' => 'admin',
+  'namespace' => 'Admin',
+  'middleware' => ['auth']
+], function () {
+   Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('admin.index');
+});
