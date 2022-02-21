@@ -19,7 +19,7 @@
 
     <div class="row">
       <div class="col-sm-6 d-grid gap-2">
-        <a class="btn btn-info" href="#">Создать категорию</a>
+        <a class="btn btn-info" href="{{route('admin.category.create')}}">Создать категорию</a>
         <a class="list-group-item" href="#">
           <h4 class="list-group-item-heading">Категория первая</h4>
           <p class="list-group-item-text">
