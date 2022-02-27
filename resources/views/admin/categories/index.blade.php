@@ -27,7 +27,7 @@
         <tr>
           <td>{{$category->title}}</td>
           <td>{{$category->published}}</td>
-          <td><a href="{{route('admin.category.edit', ['category' => $category])}}"><i class="fa-solid fa-pen-to-square"></i></a></td>
+          <td><a href="{{route('admin.category.edit', $category)}}"><i class="fa-solid fa-pen-to-square"></i></a></td>
         </tr>
       @empty
         <tr>
