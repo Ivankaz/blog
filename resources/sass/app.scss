@@ -6,3 +6,10 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Font Awesome
+$fa-font-path: "/fonts";
+@import "node_modules/font-awesome5/scss/fontawesome";
+@import "node_modules/font-awesome5/scss/fa-solid";
+@import "node_modules/font-awesome5/scss/fa-brands";
+@import "node_modules/font-awesome5/scss/fa-regular";

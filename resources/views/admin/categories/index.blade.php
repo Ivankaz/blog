@@ -12,7 +12,7 @@
   <hr>
 
   <a href="{{route('admin.category.create')}}" class="btn btn-primary float-end">
-    <i class="fa fa-plus-square-0"></i>
+    <i class="fa fa-plus"></i>
     Создать категорию
   </a>
 
@@ -32,8 +32,8 @@
               @method('DELETE')
               @csrf
 
-              <a class="btn btn-outline-dark" href="{{route('admin.category.edit', $category)}}"><i class="fa-solid fa-pen-to-square"></i></a>
-              <button class="btn btn-outline-danger" type="submit" name="button"><i class="fa-solid fa-trash"></i></button>
+              <a class="btn btn-outline-dark" href="{{route('admin.category.edit', $category)}}"><i class="fa fa-edit"></i></a>
+              <button class="btn btn-outline-danger" type="submit" name="button"><i class="fa fa-trash"></i></button>
             </form>
           </td>
         </tr>
