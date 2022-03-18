@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -27,7 +28,11 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.articles.create', [
+          'article' => [],
+          'categories' => Category::with('children')->where('parent_id', 0)->get(),
+          'delimiter' => ''
+        ]);
     }
 
     /**
@@ -38,7 +43,13 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = Article::create($request->all());
+
+        if ($request->input('categories')) {
+          $article->categories()->attach($request->input('categories'));
+        }
+
+        return redirect()->route('admin.article.index');
     }
 
     /**
