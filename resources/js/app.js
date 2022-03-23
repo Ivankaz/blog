@@ -6,6 +6,24 @@
 
 require('./bootstrap');
 
+// подключаю к полям с описанием визуальный редактор CKEditor
+var CKEditorFields = [
+  '[name=description]',
+  '[name=description_short'
+];
+
+window.ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll(CKEditorFields).forEach((el) => {
+    ClassicEditor
+      .create(el)
+      .catch(error => {
+        console.error(error);
+      });
+  });
+}, false);
+
 window.Vue = require('vue').default;
 
 /**
