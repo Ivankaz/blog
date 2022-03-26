@@ -15,6 +15,8 @@
     {{ csrf_field() }}
 
     @include('admin.categories.partials.form')
+
+    <input type="hidden" name="modified_by" value="{{Auth::id()}}">
   </form>
 </div>
 @endsection
