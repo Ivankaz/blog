@@ -71,7 +71,11 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('admin.articles.edit', [
+          'article' => $article,
+          'categories' => Category::with('children')->where('parent_id', 0)->get(),
+          'delimiter' => ''
+        ]);
     }
 
     /**
@@ -83,7 +87,15 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $article->categories()->detach();
+
+        if ($request->input('categories')) {
+          $article->categories()->attach($request->input('categories'));
+        }
+
+        $article->update($request->except('slug'));
+
+        return redirect()->route('admin.article.index');
     }
 
     /**
