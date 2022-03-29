@@ -9,7 +9,7 @@ require('./bootstrap');
 // подключаю к полям с описанием визуальный редактор CKEditor
 var CKEditorFields = [
   '[name=description]',
-  '[name=description_short'
+  '[name=description_short]'
 ];
 
 window.ClassicEditor = require('@ckeditor/ckeditor5-build-classic');
