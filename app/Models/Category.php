@@ -27,4 +27,14 @@ class Category extends Model
     public function children() {
       return $this->hasMany(self::class, 'parent_id');
     }
+
+    // обратная полиморфная связь со статьями
+    public function articles() {
+      return $this->morphedByMany(Article::class, 'categoryable');
+    }
+
+    // получение определенного количества последних созданных категорий
+    public function scopeLastCategories($query, $count) {
+      return $this->orderBy('created_at', 'desc')->take($count)->get();
+    }
 }

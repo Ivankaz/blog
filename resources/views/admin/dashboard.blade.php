@@ -20,12 +20,14 @@
     <div class="row">
       <div class="col-sm-6 d-grid gap-2">
         <a class="btn btn-info" href="{{route('admin.category.create')}}">Создать категорию</a>
-        <a class="list-group-item" href="#">
-          <h4 class="list-group-item-heading">Категория первая</h4>
+        @foreach ($categories as $category)
+        <a class="list-group-item" href="{{route('admin.category.edit', $category)}}">
+          <h4 class="list-group-item-heading">{{$category->title}}</h4>
           <p class="list-group-item-text">
-            Кол-во материалов
+            {{$category->articles->count()}}
           </p>
         </a>
+        @endforeach
       </div>
       <div class="col-sm-6 d-grid gap-2">
         <a class="btn btn-info" href="{{route('admin.article.create')}}">Создать материал</a>
