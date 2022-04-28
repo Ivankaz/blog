@@ -31,12 +31,14 @@
       </div>
       <div class="col-sm-6 d-grid gap-2">
         <a class="btn btn-info" href="{{route('admin.article.create')}}">Создать материал</a>
-        <a class="list-group-item" href="#">
-          <h4 class="list-group-item-heading">Материал первый</h4>
+        @foreach ($articles as $article)
+        <a class="list-group-item" href="{{route('admin.article.edit', $article)}}">
+          <h4 class="list-group-item-heading">{{$article->title}}</h4>
           <p class="list-group-item-text">
-            Категория
+            {{$article->categories->map(function($category) {return $category->title;})->join(', ', ' и ')}}
           </p>
         </a>
+        @endforeach
       </div>
     </div>
   </div>

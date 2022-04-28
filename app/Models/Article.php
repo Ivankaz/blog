@@ -34,4 +34,9 @@ class Article extends Model
     public function categories() {
       return $this->morphToMany(Category::class, 'categoryable');
     }
+
+    // получение определенного количества последних созданных статей
+    public function scopeLastArticles($query, $count) {
+      return $this->orderBy('created_at', 'desc')->take($count)->get();
+    }
 }
