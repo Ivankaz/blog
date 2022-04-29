@@ -4,10 +4,10 @@
   <div class="container">
     <div class="row lead">
       <div class="col-sm-3">
-        Категорий <span class="text-primary">0</span>
+        Категорий <span class="text-primary">{{$countCategories}}</span>
       </div>
       <div class="col-sm-3">
-        Материалов <span class="text-danger">0</span>
+        Материалов <span class="text-danger">{{$countArticles}}</span>
       </div>
       <div class="col-sm-3">
         Посетителей за все время <span class="text-warning">0</span>

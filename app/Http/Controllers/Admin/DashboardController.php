@@ -14,6 +14,8 @@ class DashboardController extends Controller
       return view('admin.dashboard', [
         'categories' => Category::lastCategories(5),
         'articles' => Article::lastArticles(5),
+        'countCategories' => Category::count(),
+        'countArticles' => Article::count(),
       ]);
     }
 }
