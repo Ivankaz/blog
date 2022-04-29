@@ -35,7 +35,7 @@
         <a class="list-group-item" href="{{route('admin.article.edit', $article)}}">
           <h4 class="list-group-item-heading">{{$article->title}}</h4>
           <p class="list-group-item-text">
-            {{$article->categories->map(function($category) {return $category->title;})->join(', ', ' и ')}}
+            {{$article->categories->pluck('title')->implode(', ')}}
           </p>
         </a>
         @endforeach
