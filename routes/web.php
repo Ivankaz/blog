@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group([
+    'namespace' => 'App\Http\Controllers',
+], function () {
+    Route::get('/blog/category/{slug?}', 'BlogController@category')->name('category');
+    Route::get('/blog/article/{slug?}', 'BlogController@article')->name('article');
+});
+
 Route::get('/', function () {
     return view('blog.home');
 });
