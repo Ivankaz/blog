@@ -17,4 +17,13 @@ class BlogController extends Controller
             'articles' => $category->articles()->where('published', 1)->paginate(10),
         ]);
     }
+
+    // вывожу страницу статьи
+    public function article($slug) {
+        $article = Article::where('slug', $slug)->first();
+
+        return view('blog.article', [
+            'article' => $article,
+        ]);
+    }
 }
