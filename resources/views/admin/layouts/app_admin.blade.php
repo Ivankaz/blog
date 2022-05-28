@@ -42,6 +42,9 @@
                       <li class="nav-item">
                         <a class="nav-link" href="{{route('admin.article.index')}}">Статьи</a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.user_management.user.index')}}">Пользователи</a>
+                      </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
