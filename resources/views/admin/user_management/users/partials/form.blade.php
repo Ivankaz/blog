@@ -15,9 +15,9 @@
 <input type="text" class="form-control" name="email" placeholder="Email" value="@if(old('email')) {{old('email')}} @else {{$user->email ?? ""}} @endif" required>
 
 <label for="password">Пароль</label>
-<input type="password" class="form-control" name="password" placeholder="Пароль" required>
+<input type="password" class="form-control" name="password" placeholder="Пароль" @if(Route::is('admin.user_management.user.create')) required @endif>
 
 <label for="password_confirmation">Подтверждение пароля</label>
-<input type="password" class="form-control" name="password_confirmation" placeholder="Подтверждение пароля" required>
+<input type="password" class="form-control" name="password_confirmation" placeholder="Подтверждение пароля" @if(Route::is('admin.user_management.user.create')) required @endif>
 
 <input class="btn btn-primary" type="submit" value="Сохранить">
